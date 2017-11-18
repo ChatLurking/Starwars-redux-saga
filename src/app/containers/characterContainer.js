@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
 
+import { ListItem } from '../components/listItem';
+
 import { newId } from '../../ducks/characterContainer/actions';
 import {
   selectId,
@@ -16,8 +18,9 @@ class CharacterContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ marginBottom: '30px' }}>
         character
+        <ListItem data={this.props.charData} />
         <button onClick={this._handleClick}>Button</button>
       </div>
     );

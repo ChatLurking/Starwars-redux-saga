@@ -17,10 +17,6 @@ const initState = fromJS({
     birthYear: null,
     gender: null,
     homeworld: null,
-    films: null,
-    species: null,
-    vehicles: null,
-    starships: null,
   },
   error: null,
 });
@@ -39,10 +35,6 @@ function CharacterReducer(state = initState, action) {
           .setIn(['charData', 'birthYear'], action.charData.birthYear)
           .setIn(['charData', 'gender'], action.charData.gender)
           .setIn(['charData', 'homeworld'], action.charData.homeworld)
-          .setIn(['charData', 'films'], action.charData.films)
-          .setIn(['charData', 'species'], action.charData.species)
-          .setIn(['charData', 'vehicles'], action.charData.vehicles)
-          .setIn(['charData', 'starships'], action.charData.starships)
           .set('error', null);
       }
       return state;

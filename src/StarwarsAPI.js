@@ -10,10 +10,6 @@ const buildCharacter = data => {
       birthYear: data.birth_year || null,
       gender: data.gender || null,
       homeworld: data.homeworld || null,
-      films: data.films || null,
-      species: data.species || null,
-      vehicles: data.vehicles || null,
-      starships: data.starships || null,
     };
   }
   return {};

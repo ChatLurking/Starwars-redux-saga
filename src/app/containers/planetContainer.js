@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
 
+import { ListItem } from '../components/listItem';
+
 import { newId } from '../../ducks/planetContainer/actions';
 import {
   selectId,
@@ -18,6 +20,7 @@ class PlanetContainer extends Component {
     return (
       <div>
         planet
+        <ListItem data={this.props.planetData} />
         <button onClick={this._handleClick}>Button</button>
       </div>
     );
@@ -27,13 +30,13 @@ class PlanetContainer extends Component {
 PlanetContainer.propTypes = {
   id: PropTypes.number,
   setNewId: PropTypes.func,
-  charData: PropTypes.object,
+  planetData: PropTypes.object,
 };
 
 const mapStateToProps = () =>
   createStructuredSelector({
     id: selectId(),
-    charData: selectCharData(),
+    planetData: selectCharData(),
   });
 
 const mapDispatchToProps = dispatch => ({
