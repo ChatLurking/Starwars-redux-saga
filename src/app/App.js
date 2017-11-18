@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 
 import CharacterContainer from './containers/characterContainer';
+import PlanetContainer from './containers/planetContainer';
 
 class App extends Component {
   render() {
@@ -9,6 +9,7 @@ class App extends Component {
       <div>
         Sup
         <CharacterContainer />
+        <PlanetContainer />
       </div>
     );
   }

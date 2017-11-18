@@ -1,6 +1,6 @@
 import { all } from 'redux-saga/effects';
-import { watchCharacterSagaAsync } from './watchers';
+import { watchCharacterSagaAsync, watchPlanetSaga } from './watchers';
 
 export default function* startForman() {
-  yield all([watchCharacterSagaAsync()]);
+  yield all([watchCharacterSagaAsync(), watchPlanetSaga()]);
 }

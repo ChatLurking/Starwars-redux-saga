@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
 
-import { newId } from '../../ducks/characterContainer/actions';
+import { newId } from '../../ducks/planetContainer/actions';
 import {
   selectId,
   selectCharData,
-} from '../../ducks/characterContainer/selectors';
+} from '../../ducks/planetContainer/selectors';
 
-class CharacterContainer extends Component {
+class PlanetContainer extends Component {
   _handleClick = () => {
     this.props.setNewId(this.props.id + 1);
   };
@@ -17,14 +17,14 @@ class CharacterContainer extends Component {
   render() {
     return (
       <div>
-        character
+        planet
         <button onClick={this._handleClick}>Button</button>
       </div>
     );
   }
 }
 
-CharacterContainer.propTypes = {
+PlanetContainer.propTypes = {
   id: PropTypes.number,
   setNewId: PropTypes.func,
   charData: PropTypes.object,
@@ -42,4 +42,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CharacterContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(PlanetContainer);
